@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#241e19">
+  <title>Mi sopita de letras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game" aria-label="Mi sopita de letras">
+    <button id="welcome" aria-label="A comer. Empezar el juego">
+      <img class="logo" src="LG.png" alt="Mi sopita de letras, con todo el amor de mamá" draggable="false">
+      <span>A comer</span>
+    </button>
+    <section id="table" aria-label="Ingredientes" hidden></section>
+    <button id="center" aria-label="Toca el centro para empezar" hidden>
+      <span id="hint">Toca la sopa<br>para comenzar</span>
+      <span id="pause-label" hidden>En pausa</span>
+      <span id="round" hidden>
+        <span id="category" aria-live="polite"></span>
+        <span id="clock" role="timer" aria-label="30 segundos"><span id="seconds">30</span><small>segundos</small></span>
+      </span>
+    </button>
+  </main>
+  <script src="categories.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
