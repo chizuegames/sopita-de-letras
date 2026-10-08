@@ -8,7 +8,7 @@ const category=document.querySelector('#category');
 const seconds=document.querySelector('#seconds');
 const clock=document.querySelector('#clock');
 let state='welcome',deadline=0,ticker=null,transition=null,lastCategory='';
-let activeKey='random',hiddenIngredient=null,pausedRemaining=30000;
+let activeKey='random',hiddenIngredient=null,pausedRemaining=20000;
 let tapTimer=null,holdTimer=null,press=null;
 const music=new Audio('A%20New%20Home%20Found.mp3');
 music.loop=true;music.preload='auto';
@@ -30,13 +30,13 @@ function draw(key){
 function showRound(key){
   clearInterval(ticker);
   const stayPaused=state==='paused';
-  state=stayPaused?'paused':'playing';activeKey=key;pausedRemaining=30000;
+  state=stayPaused?'paused':'playing';activeKey=key;pausedRemaining=20000;
   document.querySelector('#hint').hidden=true;
   document.querySelector('#round').hidden=false;
   category.textContent=draw(key);
   center.setAttribute('aria-label',category.textContent);
-  deadline=Date.now()+30000;
-  seconds.textContent='30';clock.setAttribute('aria-label','30 segundos');clock.classList.remove('urgent');
+  deadline=Date.now()+20000;
+  seconds.textContent='20';clock.setAttribute('aria-label','20 segundos');clock.classList.remove('urgent');
   if(!stayPaused){updateClock();ticker=setInterval(updateClock,100);}
   syncIngredients();
 }
